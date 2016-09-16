@@ -117,19 +117,25 @@ hr {
     margin-top: 10px !important;
 }
 .button {
-  display: inline-block;
-  padding: 1px 1px;
-  font-size: 24px;
-  margin: auto;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #d33a3a;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40vw;
+    height: 7vh;
+  /*display: inline-block;*/
+  /*padding: 1px 1px;*/
+  /*font-size: 24px;*/
+  /*margin: auto;*/
+  /*cursor: pointer;*/
+  /*text-align: center;*/
+  /*text-decoration: none;*/
+  /*outline: none;*/
+  /*color: #fff;*/
+  /*background-color: #d33a3a;*/
+  /*border: none;*/
+  /*border-radius: 15px;*/
+  /*box-shadow: 0 9px #999;*/
 }
 
 .button:hover {background-color: #ce2222
