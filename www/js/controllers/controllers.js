@@ -74,10 +74,10 @@ oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieS
     $scope.items = ["NGT01 คุณนิยม","NGT02 คุณเบท","NGT03 คุณติ๊ง","NGT04 คุณโอ๋"]; 
     if(status == 0){ 
         connectMicrogear(); 
-        for (var i = 1; i <= 4; i++) { 
-        $scope.items.push(i); 
-        console.log(i); 
-    } 
+        // for (var i = 1; i <= 6; i++) { 
+        // $scope.items.push(i); 
+        // console.log(i); 
+    //} 
     } 
     else{ 
         for (var i = 1; i <= 4; i++) { 
