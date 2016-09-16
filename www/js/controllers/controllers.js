@@ -125,7 +125,7 @@ oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieS
             
             //   confirmPopup.then(function(res) {
             //      if(res) {
-            //         microgear.chat("server",id+"|"+name+"|"+index);
+                    microgear.chat("server",id+"|"+name+"|"+index);
             //       console.log('You are sure');
             //      } else {
             //       console.log('You are not sure');
