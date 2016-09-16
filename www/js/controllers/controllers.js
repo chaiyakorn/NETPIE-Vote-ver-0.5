@@ -80,7 +80,7 @@ oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieS
     } 
     } 
     else{ 
-        for (var i = 1; i <= 7; i++) { 
+        for (var i = 1; i <= 4; i++) { 
             $scope.items.push(i); 
             console.log(i); 
         } 
