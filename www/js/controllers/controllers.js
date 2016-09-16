@@ -113,7 +113,23 @@ oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieS
             var name=getrespone;
             var id=getid;
             console.log("ID: "+id+" name :"+getrespone+" vote :"+index);
-             microgear.chat("server",id+"|"+name+"|"+index);
+             
+             
+             $scope.showConfirm = function() {
+               var confirmPopup = $ionicPopup.confirm({
+                 title: 'ยืนยันการโหวด',
+                 template: 'คุณต้องการจะโหวดให้ทีม ' + index+' ใช่หรือไม่ ?'
+               });
+            
+               confirmPopup.then(function(res) {
+                 if(res) {
+                    microgear.chat("server",id+"|"+name+"|"+index);
+                   console.log('You are sure');
+                 } else {
+                   console.log('You are not sure');
+                 }
+               });
+ };
         
     };
 
