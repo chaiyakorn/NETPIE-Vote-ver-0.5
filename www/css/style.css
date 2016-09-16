@@ -118,8 +118,9 @@ hr {
 }
 .button {
   display: inline-block;
-  padding: 15px 25px;
+  padding: 1px 1px;
   font-size: 24px;
+  margin: auto;
   cursor: pointer;
   text-align: center;
   text-decoration: none;

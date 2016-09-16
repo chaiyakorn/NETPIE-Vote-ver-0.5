@@ -29,7 +29,8 @@
                 </label> -->
                 <label class="item item-input">
                     <span class="input-label">ชื่อผู้เข้าร่วม</span>                    
-                    <input ng-model="user.name" type="text" >
+                    <input ng-model="user.name" type="text"  disabled="ture" >
+                     
                 </label>
               
                 <label class="item item-input">
@@ -47,9 +48,15 @@
                   
                 </label>  -->  
                 <ion-list>              
-                    <button class="button" collection-repeat="item in items"  collection-item-height="30" ng-click="set(item)">
-                        {{item}}
-                    </button>
+                    <!-- <button class="button  " collection-repeat="item in items"  collection-item-height="30" ng-click="set(item)" >
+                        {{item}}<br>
+                    </button> -->
+                    <ion-list class="text-center">   
+                <br> 
+                    <button class="button" ng-click="set(item)" collection-repeat="item in items"  collection-item-height="60"> 
+                        {{item}} 
+                    </button>        
+                </ion-list>
                 </ion-list>    
             </div>
         </div>
