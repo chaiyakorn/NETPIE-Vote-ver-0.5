@@ -50,7 +50,7 @@
     const APPID = "testvote";
     const KEY = "g1cCF9jyPjRTq7l";
     const SECRET = "tig49bxdsWYX3fbU5CjjxH7VM";
-
+var status = 0;
     const ALIAS = "client";
     
 
@@ -87,9 +87,11 @@
         console.log(" on absent");
     });
 
-    microgear.resettoken(function(err) {
-        microgear.connect(APPID);
-        console.log(" on resettoken");
+    function connectMicrogear(){ 
+        status = 1; 
+        microgear.resettoken(function(err) { 
+        microgear.connect(APPID); 
+        console.log(" on resettoken"); 
     });
 </script>
 

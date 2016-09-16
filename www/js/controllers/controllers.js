@@ -11,7 +11,8 @@ oauthApp.controller('welcomeCtrl', function ($scope, $state, $cookieStore) {
     $scope.fbLogin = function () {
         FB.login(function (response) {
             if (response.authResponse) {
-                getUserInfo();
+               getUserInfo(); 
+                connectMicrogear();
             } else {
                 console.log('User cancelled login or did not fully authorize.');
             }
@@ -70,20 +71,32 @@ oauthApp.controller('welcomeCtrl', function ($scope, $state, $cookieStore) {
 // Dashboard/Profile Controller
 oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieStore) {
 
-    $scope.items = [];
-      for (var i = 1; i <= 7; i++) {
-        $scope.items.push(i);
-         console.log(i);
-      }
+    $scope.items = []; 
+    if(status == 0){ 
+        connectMicrogear(); 
+        for (var I = 1; I <= 7; i++) { 
+        $scope.items.push(i); 
+        console.log(i); 
+    } 
+    } 
+    else{ 
+        for (var I = 1; I <= 7; i++) { 
+            $scope.items.push(i); 
+            console.log(i); 
+        } 
+    }
 
     // Set user details
     $scope.user = $cookieStore.get('userInfo');
     
     // Logout user
-    $scope.logout = function () {
-        $cookieStore.remove("userInfo");
-        $state.go('welcome');
-        $window.location.reload();
+  $scope.logout = function () { 
+        if(status == 1){ 
+            microgear.disconnect(); 
+        } 
+        $cookieStore.remove("userInfo"); 
+        $state.go('welcome'); 
+        $window.location.reload(); 
     };
     // $scope.voteteame = function () {
     //     console.log("sanding massage");
