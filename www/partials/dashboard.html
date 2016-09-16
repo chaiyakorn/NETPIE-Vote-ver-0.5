@@ -47,17 +47,14 @@
  <!--                </center>    
                   
                 </label>  -->  
-                <ion-list>              
-                    <!-- <button class="button  " collection-repeat="item in items"  collection-item-height="30" ng-click="set(item)" >
-                        {{item}}<br>
-                    </button> -->
-                    <ion-list class="text-center">   
+              <ion-scroll direction="y" style="height: 50vh"> 
+                <ion-list class="text-center">   
                 <br> 
                     <button class="button" ng-click="set(item)" collection-repeat="item in items"  collection-item-height="60"> 
                         {{item}} 
                     </button>        
-                </ion-list>
-                </ion-list>    
+                </ion-list>   
+                </ion-scroll> 
             </div>
         </div>
         <div class="team">
