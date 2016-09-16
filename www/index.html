@@ -46,54 +46,56 @@
         </script>
         <script src="https://netpie.io/microgear.js"></script>
 
-<script>
-    const APPID = "testvote";
-    const KEY = "g1cCF9jyPjRTq7l";
-    const SECRET = "tig49bxdsWYX3fbU5CjjxH7VM";
-var status = 0;
-    const ALIAS = "client";
-    
+<script> 
+    const APPID = "testvote"; 
+    const KEY = "g1cCF9jyPjRTq7l"; 
+    const SECRET = "tig49bxdsWYX3fbU5CjjxH7VM"; 
 
-    var microgear = Microgear.create({
-        key: KEY,
-        secret: SECRET,
-        alias : ALIAS
-    });
+    const ALIAS = "arm"; 
 
-    microgear.on('message',function(topic,msg) {
-        console.log(" on message");
-        document.getElementById("data").innerHTML = msg;
-        console.log(msg);
-    });
+    var status = 0; 
+     
 
-    microgear.on('connected', function() {
-        console.log(" on connected");
-        microgear.setAlias(ALIAS);
-        document.getElementById("data").innerHTML = "เชื่อมต่อ NETPIE แล้ว";
-       
-        // setInterval(function() {
-        //     microgear.chat("server","Hello from server at "+Date.now());
+    var microgear = Microgear.create({ 
+        key: KEY, 
+        secret: SECRET, 
+        alias : ALIAS 
+    }); 
 
-        // },5000);
-    });
+    microgear.on('message',function(topic,msg) { 
+        console.log(" on message"); 
+        document.getElementById("data").innerHTML = msg; 
+        console.log(msg); 
+    }); 
 
-    microgear.on('present', function(event) {
-        console.log(event);
-        console.log(" on present");
-    });
+    microgear.on('connected', function() { 
+        console.log(" on connected"); 
+        microgear.setAlias(ALIAS); 
+        document.getElementById("data").innerHTML = "เชื่อมต่อ NETPIE แล้ว"; 
+        
+        // setInterval(function() { 
+        //     microgear.chat("server","Hello from server at "+Date.now()); 
 
-    microgear.on('absent', function(event) {
-        console.log(event);
-        console.log(" on absent");
-    });
+        // },5000); 
+    }); 
 
+    microgear.on('present', function(event) { 
+        console.log(event); 
+        console.log(" on present"); 
+    }); 
+
+    microgear.on('absent', function(event) { 
+        console.log(event); 
+        console.log(" on absent"); 
+    }); 
     function connectMicrogear(){ 
         status = 1; 
         microgear.resettoken(function(err) { 
-        microgear.connect(APPID); 
-        console.log(" on resettoken"); 
-    }); 
-    }
+            microgear.connect(APPID); 
+            console.log(" on resettoken"); 
+        }); 
+    } 
+     
 </script>
 
 
