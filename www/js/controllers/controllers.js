@@ -111,27 +111,24 @@ oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieS
 
     $scope.set = function(index) {
         console.log("sanding massage"+index);
-            var name=getrespone;
-            var id=getid;
-            console.log("ID: "+id+" name :"+getrespone+" vote :"+index);
-            
-            $scope.showButton = false;
-             microgear.chat("server",id+"|"+name+"|"+index);
-             
-            //   var confirmPopup = $ionicPopup.confirm({
-            //      title: 'ยืนยันการโหวด',
-            //      template: 'คุณต้องการจะโหวดให้ทีม ' + index+' ใช่หรือไม่ ?'
-            //   });
-            
-            //   confirmPopup.then(function(res) {
-            //      if(res) {
-            //         microgear.chat("server",id+"|"+name+"|"+index);
-            //       console.log('You are sure');
-            //      } else {
-            //       console.log('You are not sure');
-            //      }
-            //   });
- 
+        var name=getrespone;
+        var id=getid;
+        console.log("ID: "+id+" name :"+getrespone+" vote :"+index);
+         
+        var confirmPopup = $ionicPopup.confirm({
+            title: 'ยืนยันการโหวด',
+            template: 'คุณต้องการจะโหวดให้ทีม ' + index+' ใช่หรือไม่ ?'
+        });
+        
+        confirmPopup.then(function(res) {
+            if(res) {
+                $scope.showButton = false;
+                microgear.chat("server",id+"|"+name+"|"+index);
+                console.log('You are sure');
+            } else {
+            console.log('You are not sure');
+         }
+      });
         
     };
 
