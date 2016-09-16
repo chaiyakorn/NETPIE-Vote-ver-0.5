@@ -116,21 +116,21 @@ oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieS
             console.log("ID: "+id+" name :"+getrespone+" vote :"+index);
             
             $scope.showButton = false;
+             microgear.chat("server",id+"|"+name+"|"+index);
              
-             
-              var confirmPopup = $ionicPopup.confirm({
-                 title: 'ยืนยันการโหวด',
-                 template: 'คุณต้องการจะโหวดให้ทีม ' + index+' ใช่หรือไม่ ?'
-              });
+            //   var confirmPopup = $ionicPopup.confirm({
+            //      title: 'ยืนยันการโหวด',
+            //      template: 'คุณต้องการจะโหวดให้ทีม ' + index+' ใช่หรือไม่ ?'
+            //   });
             
-              confirmPopup.then(function(res) {
-                 if(res) {
-                    microgear.chat("server",id+"|"+name+"|"+index);
-                  console.log('You are sure');
-                 } else {
-                  console.log('You are not sure');
-                 }
-              });
+            //   confirmPopup.then(function(res) {
+            //      if(res) {
+            //         microgear.chat("server",id+"|"+name+"|"+index);
+            //       console.log('You are sure');
+            //      } else {
+            //       console.log('You are not sure');
+            //      }
+            //   });
  
         
     };
