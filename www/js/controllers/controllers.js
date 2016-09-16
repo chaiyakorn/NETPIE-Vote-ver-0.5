@@ -71,7 +71,7 @@ oauthApp.controller('welcomeCtrl', function ($scope, $state, $cookieStore) {
 // Dashboard/Profile Controller
 oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieStore) {
 
-    $scope.items = []; 
+    $scope.items = ["NGT01 คุณนิยม","NGT02 คุณเบท","NGT03 คุณติ๊ง","NGT04 คุณโอ๋"]; 
     if(status == 0){ 
         connectMicrogear(); 
         for (var i = 1; i <= 4; i++) { 
