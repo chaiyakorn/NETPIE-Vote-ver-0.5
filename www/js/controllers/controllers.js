@@ -74,13 +74,13 @@ oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieS
     $scope.items = []; 
     if(status == 0){ 
         connectMicrogear(); 
-        for (var I = 1; I <= 7; i++) { 
+        for (var i = 1; i <= 7; i++) { 
         $scope.items.push(i); 
         console.log(i); 
     } 
     } 
     else{ 
-        for (var I = 1; I <= 7; i++) { 
+        for (var i = 1; i <= 7; i++) { 
             $scope.items.push(i); 
             console.log(i); 
         } 
