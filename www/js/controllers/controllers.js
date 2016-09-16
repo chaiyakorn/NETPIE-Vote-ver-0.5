@@ -117,7 +117,7 @@ oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieS
             
             $scope.showButton = false;
              
-             $scope.showConfirm = function() {
+             
               var confirmPopup = $ionicPopup.confirm({
                  title: 'ยืนยันการโหวด',
                  template: 'คุณต้องการจะโหวดให้ทีม ' + index+' ใช่หรือไม่ ?'
@@ -131,7 +131,7 @@ oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieS
                   console.log('You are not sure');
                  }
               });
- };
+ 
         
     };
 
