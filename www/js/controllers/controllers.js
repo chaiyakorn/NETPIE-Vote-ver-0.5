@@ -70,6 +70,7 @@ oauthApp.controller('welcomeCtrl', function ($scope, $state, $cookieStore) {
 
 // Dashboard/Profile Controller
 oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieStore) {
+    $scope.showButton = true;
 
     $scope.items = ["NGT01 คุณนิยม","NGT02 คุณเบท","NGT03 คุณติ๊ง","NGT04 คุณโอ๋"]; 
     if(status == 0){ 
@@ -113,22 +114,23 @@ oauthApp.controller('dashboardCtrl', function ($scope, $window, $state, $cookieS
             var name=getrespone;
             var id=getid;
             console.log("ID: "+id+" name :"+getrespone+" vote :"+index);
-             
-             
-             $scope.showConfirm = function() {
-               var confirmPopup = $ionicPopup.confirm({
-                 title: 'ยืนยันการโหวด',
-                 template: 'คุณต้องการจะโหวดให้ทีม ' + index+' ใช่หรือไม่ ?'
-               });
             
-               confirmPopup.then(function(res) {
-                 if(res) {
-                    microgear.chat("server",id+"|"+name+"|"+index);
-                   console.log('You are sure');
-                 } else {
-                   console.log('You are not sure');
-                 }
-               });
+            $scope.showButton = false;
+             
+            //  $scope.showConfirm = function() {
+            //   var confirmPopup = $ionicPopup.confirm({
+            //      title: 'ยืนยันการโหวด',
+            //      template: 'คุณต้องการจะโหวดให้ทีม ' + index+' ใช่หรือไม่ ?'
+            //   });
+            
+            //   confirmPopup.then(function(res) {
+            //      if(res) {
+            //         microgear.chat("server",id+"|"+name+"|"+index);
+            //       console.log('You are sure');
+            //      } else {
+            //       console.log('You are not sure');
+            //      }
+            //   });
  };
         
     };
